@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <style>
+        #box{
+            font-family: 'Courier New', Courier, monospace;
+            text-align: center;
+            font-size: 100px;
+        }
+    </style>
+</head>
+<body onload="clock()">
+    <h1 id="box">05:10:30</h1>
+    <script>
+        var box = document.querySelector("#box");
+        function clock() {
+            var date =  new Date();
+            box.innerText=date.toLocaleTimeString();
+        }
+        setInterval(clock,1000);
+    </script>
+</body>
+</html>

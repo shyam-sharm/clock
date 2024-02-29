@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <style>
+        #box{
+            font-family: 'Courier New', Courier, monospace;
+            text-align: center;
+            font-size: 100px;
+        }
+    </style>
+</head>
+<body onload="clock()">
+    <h1 id="box">05:10:30</h1>
+    <script>
+        var box = document.querySelector("#box");
+        function clock() {
+            var date =  new Date();
+            var hrs = date.getHours();
+            var phase = "AM";
+            var mins = date.getMinutes();
+            var secs = date.getUTCSeconds();
+            // box.innerText=date.toLocaleTimeString();
+            if (hrs>12) {
+                phase="PM";
+                hrs=hrs-12;
+            }
+            if (hrs<10) {
+                hrs="0"+hrs;
+            }
+            if (mins<10) {
+                mins="0"+mins;
+            }
+            if (secs<10) {
+                secs="0"+secs;
+            }
+            box.innerText=`${hrs}:${mins}:${secs} ${phase}`;
+        }
+        setInterval(clock,1000);
+    </script>
+</body>
+</html>
